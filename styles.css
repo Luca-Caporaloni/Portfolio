@@ -11,7 +11,40 @@
     transform: translateX(0);
 }
 
+/* Para tablets (pantallas de hasta 1024px) */
+@media (max-width: 1024px) {
+  body {
+      font-size: 16px;
+  }
+  .section {
+      padding: 20px;
+  }
+}
 
+/* Para celulares (pantallas de hasta 768px) */
+@media (max-width: 768px) {
+  body {
+      font-size: 14px;
+  }
+  .projects-grid {
+      display: flex;
+      flex-direction: column; /* Cambia de grid a una sola columna */
+  }
+  .contact-form input, .contact-form textarea {
+      width: 100%; /* Que los inputs ocupen todo el ancho */
+  }
+}
+
+/* Para celulares más pequeños (menos de 480px) */
+@media (max-width: 480px) {
+  .section-title {
+      font-size: 20px;
+  }
+  .btn-glow {
+      width: 100%; /* Botón ocupa todo el ancho */
+      text-align: center;
+  }
+}
 
 /* Estilos Generales */
 body {
