@@ -1,0 +1,252 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #ffffff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+#custom-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1a1a1a;
+    color: #00FFAA;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #00FFAA, 0 0 20px #00FFAA;
+    font-size: 1rem;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(20px);
+}
+
+#custom-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+
+/* Animación del cursor intermitente */
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.typing::after {
+    content: "|";
+    display: inline-block;
+    animation: blink 0.8s infinite;
+}
+
+/* Efecto de selección del texto */
+.selected {
+    background-color: rgba(0, 174, 255, 0.5); /* Celeste transparente */
+    color: black; /* Texto seleccionado en negro */
+}
+
+
+
+/* Contenedor del botón arriba a la izquierda */
+.top-left-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+/* Estilos del botón con glow */
+.btn-back {
+    display: flex; /* Mantiene tamaño ajustado al contenido */
+    align-items: center;
+    gap: 8px; /* Espaciado entre la flecha y el texto */
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap; /* Evita que el texto se rompa */
+
+    color: #00FFAA;
+    background-color: #121212;
+    border: 2px solid #00FFAA;
+    box-shadow: 0 0 10px #00FFAA, 0 0 20px #00FFAA;
+    transition: all 0.3s ease;
+}
+
+/* Hover: Cambio de color y más brillo */
+.btn-back:hover {
+    background-color: #00FFAA;
+    color: #121212;
+    box-shadow: 0 0 15px #00FFAA, 0 0 30px #00FFAA;
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+/* Contenedor */
+.container {
+    width: 85%;
+    margin: auto;
+    padding: 100px;
+}
+
+/* Títulos */
+h1 {
+    color: #00FFAA;
+    margin-bottom: 150px;
+}
+
+h2 {
+    color: #00FFAA;
+    margin: 80px 0 60px;
+}
+
+/* Línea divisoria */
+.section-divider {
+    width: 80%;
+    height: 3px;
+    background: #00FFAA;
+    box-shadow: 0 0 10px #00FFAA;
+    margin: 50px auto;
+}
+
+.minecraft-text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px; /* Ajusta el tamaño según necesites */
+    text-transform: uppercase; /* Para que se vea más tipo Minecraft */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+
+/* Secciones */
+.experience-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Se ajustó el espacio entre las cajas */
+    margin-bottom: 50px;
+}
+
+/* Cajas de experiencia */
+.experience-box {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 255, 170, 0.1);
+    border: 2px solid #00FFAA;
+    box-shadow: 0 0 10px #00FFAA;
+    border-radius: 10px;
+    padding: 20px;
+    width: 45%; /* Ajusta el tamaño de la caja */
+    min-width: 300px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+}
+
+.experience-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00FFAA;
+}
+
+/* Imágenes */
+.experience-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin-right: 15px;
+    object-fit: cover;
+    filter: brightness(80%);
+    transition: filter 0.5s ease-in-out;
+}
+
+.experience-box:hover .experience-image {
+    filter: brightness(100%);
+}
+
+/* Contenido */
+.experience-content {
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* Título */
+.experience-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00FFAA;
+}
+
+/* Fecha y carrera centrados */
+.experience-date{
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.experience-career {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Etiquetas en verde */
+.experience-date span.label, 
+.experience-career span.label {
+    color: #00FFAA;
+    font-weight: bold;
+}
+
+/* Valores en blanco */
+.experience-date span.value, 
+.experience-career span.value {
+    color: #ffffff;
+}
+
+/* Animaciones */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .experience-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 80%;
+    }
+
+    .experience-image {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .experience-content {
+        text-align: center;
+    }
+
+    .experience-date {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+}

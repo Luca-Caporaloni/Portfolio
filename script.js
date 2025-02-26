@@ -33,12 +33,6 @@ function highlightActiveSection() {
     });
 }
 
-// Escuchar el evento de scroll
-window.addEventListener('scroll', highlightActiveSection);
-
-// Resaltar la sección activa al cargar la página
-highlightActiveSection();
-
 
 // Botones para pasar skills
 document.addEventListener("DOMContentLoaded", function () {
@@ -245,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Redirigir a la página de inicio después de 3 segundos
                 setTimeout(() => {
-                    window.location.href = "https://tusitio.com"; // Cambia por la URL de tu página de inicio
+                    window.location.href = "https://luca-caporaloni.github.io/Portfolio/"; // Cambia por la URL de tu página de inicio
                 }, 3000);
 
             } else {
@@ -264,4 +258,36 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+
+// Copiar IP al portapapeles
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        showCustomToast("📌 IP copiada: " + text);
+    }).catch(err => {
+        console.error("Error al copiar: ", err);
+    });
+}
+
+function showCustomToast(message) {
+    const toast = document.getElementById("custom-toast");
+    toast.textContent = message;
+    toast.classList.remove("hidden");
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+        setTimeout(() => {
+            toast.classList.add("hidden");
+        }, 300);
+    }, 3000);
+}
+
+
+
+// Abrir Discord en nueva pestaña
+function openDiscord(url) {
+    window.open(url, '_blank');
+}
   
+
